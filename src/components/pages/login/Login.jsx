@@ -7,14 +7,14 @@ import './Login.css';
 
 export const Login = () => {
     const dataForm = {
-        inputFieldLoginOne: {
+        inputUsername: {
             typeSpan: 'far fa-user',
             type: 'text',
             name: 'userName',
             id: 'userName',
             placeholder: 'userName',
         },
-        inputFieldLoginTwo: {
+        inputPassword: {
             typeSpan: 'fas fa-key',
             type: 'password',
             name: 'password',

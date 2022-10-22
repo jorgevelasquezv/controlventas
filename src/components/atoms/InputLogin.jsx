@@ -1,11 +1,6 @@
-import React, { useState } from 'react'
 
-export const InputLogin = ({ type, name, id, placeholder }) => {
-  const [value, setValue] = useState('')
-  
-  const handleOnchange = (e) => {
-    setValue(e.target.value)
-  }
+export const InputLogin = ({ data, handleOnchange }) => {
+  const { type, name, id, placeholder, value } = data;
   return (
       <input type={type} name={name} id={id} placeholder={placeholder} value={value} onChange={handleOnchange} />
   );
