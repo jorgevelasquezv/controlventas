@@ -17,6 +17,7 @@ export const FormLogin = ({ dataForm }) => {
     };
     const handleOnchangePassword = (event) => {
         dispatch(setPassword(event.target.value));
+        console.log(username, password);
     };
 
     return (
