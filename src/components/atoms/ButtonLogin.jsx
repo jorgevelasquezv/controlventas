@@ -12,19 +12,15 @@ const regexPassword = /[A-Za-z0-9]{8,20}/g;
 export const ButtonLogin = ({ data }) => {
     const { name } = data;
     const dispatch = useDispatch();
-    const { isAuthenticated, username, password } = useSelector(
+    const { username, password } = useSelector(
         (state) => state.users
     );
     const handleLogin = (e) => {
         e.preventDefault();
         if (regexUsername.test(username) && regexPassword.test(password)) {
             dispatch(setIsAutenticated(true));
-            console.log(true);
-            console.log(isAuthenticated);
             dispatch(setPassword(''));
-          dispatch(setUsername(''));
-          
-          console.log(JSON.parse(localStorage.getItem('log')));
+            dispatch(setUsername(''));
         }
     };
 
