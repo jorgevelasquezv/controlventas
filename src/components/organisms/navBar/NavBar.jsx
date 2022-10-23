@@ -1,13 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/images/grafico-de-barras.png';
-import { setIsAutenticated } from '../../store/slice/users';
+import logo from '../../../assets/images/grafico-de-barras.png';
+import { setIsAutenticated } from '../../../store/slice/users';
+
+import './NavBar.css'
 
 export const NavBar = () => {
     const dispatch = useDispatch();
     const handleLogout = () => {
-        dispatch(setIsAutenticated(false))
+        dispatch(setIsAutenticated(false));
     };
 
     return (

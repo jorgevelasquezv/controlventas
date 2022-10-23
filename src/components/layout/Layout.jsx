@@ -1,12 +1,12 @@
 import React from 'react';
 import { Footer } from '../organisms/Footer';
-import { NavBar } from '../organisms/NavBar';
+import { NavBar } from '../organisms/navBar/NavBar';
 
 export const Layout = ({ children }) => {
     return (
         <>
             <NavBar />
-            <main>{children}</main>
+            <main className="mt-4">{children}</main>
             <Footer />
         </>
     );
