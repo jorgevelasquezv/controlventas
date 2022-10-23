@@ -22,7 +22,9 @@ export const ButtonLogin = ({ data }) => {
             console.log(true);
             console.log(isAuthenticated);
             dispatch(setPassword(''));
-            dispatch(setUsername(''));
+          dispatch(setUsername(''));
+          
+          console.log(JSON.parse(localStorage.getItem('log')));
         }
     };
 

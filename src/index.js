@@ -4,6 +4,9 @@ import './index.css';
 import {App} from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'jquery';
+import 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
