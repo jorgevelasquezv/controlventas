@@ -18,7 +18,7 @@ export const Footer = () => {
                         Software Personal Politecnico Gran Colombiano
                     </p>
                     <a
-                        href="https://github.com/jorgevelasquezv/React/tree/main/routerapp"
+                        href="https://github.com/jorgevelasquezv/controlventas"
                         target="_blank"
                         rel="noreferrer noopener"
                     >

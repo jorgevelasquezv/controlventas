@@ -1,10 +1,12 @@
 import React from 'react';
 
+import logo from '../../assets/images/grafico-de-barras.png'
+
 export const ImageLogin = () => {
     return (
         <img
             className="image"
-            src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png"
+            src={logo}
             alt="Logo"
         />
     );

@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/grafico-de-barras.png';
+import { setIsAutenticated } from '../../store/slice/users';
 
 export const NavBar = () => {
+    const dispatch = useDispatch();
+    const handleLogout = () => {
+        dispatch(setIsAutenticated(false))
+    };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light navwrapper">
             <div className="container-fluid">
@@ -33,11 +40,11 @@ export const NavBar = () => {
                                 end={true}
                                 className={({ isActive }) =>
                                     `nav-link ${
-                                        isActive ? 'active text-white' : ''
+                                        isActive ? 'active text-black' : ''
                                     }`
                                 }
                                 aria-current="page"
-                                to="/"
+                                to="/home"
                             >
                                 Ingresar Ventas
                             </NavLink>
@@ -46,7 +53,7 @@ export const NavBar = () => {
                             <NavLink
                                 className={({ isActive }) =>
                                     `nav-link ${
-                                        isActive ? 'active text-white' : ''
+                                        isActive ? 'active text-black' : ''
                                     }`
                                 }
                                 aria-current="page"
@@ -59,7 +66,7 @@ export const NavBar = () => {
                             <NavLink
                                 className={({ isActive }) =>
                                     `nav-link ${
-                                        isActive ? 'active text-white' : ''
+                                        isActive ? 'active text-black' : ''
                                     }`
                                 }
                                 aria-current="page"
@@ -76,7 +83,7 @@ export const NavBar = () => {
                             `nav-link ${isActive ? 'active text-black' : ''}`
                         }
                         aria-current="page"
-                        // onClick={handleLogout}
+                        onClick={handleLogout}
                         to="/"
                     >
                         Logout
@@ -85,4 +92,4 @@ export const NavBar = () => {
             </div>
         </nav>
     );
-}
+};

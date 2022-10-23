@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout } from '../../layout/Layout';
 
 
-import './Ventas.css'
+import './IngresarVentas.css'
 
 export const Ventas = () => {
     return (
