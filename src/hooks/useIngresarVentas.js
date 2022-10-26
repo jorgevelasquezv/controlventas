@@ -22,6 +22,10 @@ export const useIngresarVentas = () => {
         saleInput.total = saleInput.price * saleInput.quantity;
         dispatch(setSale(saleInput));
     };
+    const handleOnChangeDate = (e) => {
+        saleInput.date = e.target.value;
+        console.log(saleInput.date);
+    };
 
     const handleOnClickSaveSale = (e) => {
         e.preventDefault();
@@ -32,7 +36,7 @@ export const useIngresarVentas = () => {
             sale.quantity.length > 0
         ) {
             dispatch(setValidate(2));
-            saleInput.date = formatDate(new Date());
+            saleInput.date = new Date(saleInput.date).toLocaleString();
 
             dispatch(setSales([...sales, saleInput]));
             dispatch(
@@ -41,7 +45,7 @@ export const useIngresarVentas = () => {
                     price: '',
                     quantity: '',
                     total: '',
-                    date: '',
+                    date: new Date().toISOString().replace(/.$/, ''),
                 })
             );
         } else {
@@ -53,5 +57,5 @@ export const useIngresarVentas = () => {
         localStorage.setItem('sales', JSON.stringify(sales));
     }, [sales]);
 
-    return [validate, sale, handleOnChangeProduct, handleOnChangePrice, handleOnChangeQuatity, handleOnClickSaveSale]
+    return [validate, sale, handleOnChangeProduct, handleOnChangePrice, handleOnChangeQuatity, handleOnChangeDate, handleOnClickSaveSale]
 }

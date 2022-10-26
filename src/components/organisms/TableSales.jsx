@@ -3,12 +3,14 @@ import React from 'react';
 export const TableSales = () => {
     const products = JSON.parse(localStorage.getItem('sales')) || [];
 
-    const unidades = products
-        .map((product) => parseInt(product.quantity))
+    const unidades = products.length > 0 && products
+        .map((product) => parseInt(product?.quantity))
         .reduce((current, next) => current + next);
-    const total = products
-        .map((product) => product.total)
-        .reduce((current, next) => current + next);
+    const total =
+        products.length > 0 &&
+        products
+            .map((product) => product?.total)
+            .reduce((current, next) => current + next);
 
     return (
         <table className="table table-striped">
@@ -24,7 +26,7 @@ export const TableSales = () => {
                 </tr>
             </thead>
             <tbody>
-                {products.map((product, key) => (
+                {products.length > 0 && products.map((product, key) => (
                     <tr key={key}>
                         <th scope="row">{key + 1}</th>
                         <td>{product.product}</td>

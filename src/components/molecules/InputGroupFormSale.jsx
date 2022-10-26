@@ -6,7 +6,9 @@ export const InputGroupFormSale = ({
     alert,
     sale,
     handleOnChange,
-    disabled = false
+    disabled = false,
+    type = 'number',
+    defaultValue
 }) => {
     return (
         <section className="input-group m-1 mb-2">
@@ -14,13 +16,14 @@ export const InputGroupFormSale = ({
             <input
                 id="price"
                 name="price"
-                type="number"
+                type={type}
                 className="form-control"
                 aria-label="Dollar amount (with dot and two decimal places)"
                 value={sale}
                 onChange={handleOnChange}
                 required
                 disabled={disabled}
+                defaultValue={defaultValue}
             />
             <span className="input-group-text">{spanRight}</span>
             <article className="invalid-feedback">

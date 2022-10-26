@@ -11,6 +11,7 @@ export const FormIngresarVentas = () => {
         handleOnChangeProduct,
         handleOnChangePrice,
         handleOnChangeQuatity,
+        handleOnChangeDate,
         handleOnClickSaveSale,
     ] = useIngresarVentas();
 
@@ -40,6 +41,14 @@ export const FormIngresarVentas = () => {
                 alert="Por favor, ingrese cantidad de productos."
                 sale={sale.quantity}
                 handleOnChange={handleOnChangeQuatity}
+            />
+
+            <InputGroupFormSale
+                spanLeft="Fecha Venta"
+                alert="Por favor, ingrese cantidad de productos."
+                handleOnChange={handleOnChangeDate}
+                type="datetime-local"
+                defaultValue={sale.date}
             />
 
             <InputGroupFormSale

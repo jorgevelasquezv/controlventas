@@ -3,7 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 export const salesSlices = createSlice({
     name: 'sales',
     initialState: {
-        sale: { product: '', price: '', quantity: '', total: '', date: '' },
+        sale: {
+            product: '',
+            price: '',
+            quantity: '',
+            total: '',
+            date: new Date().toISOString().replace(/.$/, ''),
+        },
         sales: JSON.parse(localStorage.getItem('sales')) || [],
         validate: 0,
     },
@@ -15,8 +21,8 @@ export const salesSlices = createSlice({
             state.sales = action.payload;
         },
         setValidate: (state, action) => {
-            state.validate = action.payload
-        }
+            state.validate = action.payload;
+        },
     },
 });
 
