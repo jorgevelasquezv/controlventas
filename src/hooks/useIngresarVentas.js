@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { formatDate } from "../helpers/formDate";
 import { setSale, setSales, setValidate } from "../store/slice/sales";
 
 export const useIngresarVentas = () => {
@@ -17,7 +16,7 @@ export const useIngresarVentas = () => {
         saleInput.total = saleInput.price * saleInput.quantity;
         dispatch(setSale(saleInput));
     };
-    const handleOnChangeQuatity = (e) => {
+    const handleOnChangeQuantity = (e) => {
         saleInput.quantity = e.target.value;
         saleInput.total = saleInput.price * saleInput.quantity;
         dispatch(setSale(saleInput));
@@ -57,5 +56,5 @@ export const useIngresarVentas = () => {
         localStorage.setItem('sales', JSON.stringify(sales));
     }, [sales]);
 
-    return [validate, sale, handleOnChangeProduct, handleOnChangePrice, handleOnChangeQuatity, handleOnChangeDate, handleOnClickSaveSale]
+    return [validate, sale, handleOnChangeProduct, handleOnChangePrice, handleOnChangeQuantity, handleOnChangeDate, handleOnClickSaveSale]
 }

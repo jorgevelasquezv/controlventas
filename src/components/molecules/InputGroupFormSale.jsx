@@ -18,7 +18,6 @@ export const InputGroupFormSale = ({
                 name="price"
                 type={type}
                 className="form-control"
-                aria-label="Dollar amount (with dot and two decimal places)"
                 value={sale}
                 onChange={handleOnChange}
                 required
