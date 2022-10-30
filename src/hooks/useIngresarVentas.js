@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { formatDate } from "../helpers/formDate";
 import { setSale, setSales, setValidate } from "../store/slice/sales";
 
 export const useIngresarVentas = () => {
