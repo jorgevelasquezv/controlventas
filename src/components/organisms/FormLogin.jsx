@@ -1,23 +1,15 @@
 import { ButtonLogin } from '../atoms/ButtonLogin';
 import { InputFieldLogin } from '../molecules/InputFieldLogin';
-import { useDispatch, useSelector } from 'react-redux';
-import { setPassword, setUsername } from '../../store/slice/users';
+import { useLogin } from '../../hooks/useLogin';
 
 export const FormLogin = ({ dataForm }) => {
-    const { username, password } = useSelector((state) => state.users);
-    const dispatch = useDispatch();
-
-    const { inputUsername, inputPassword, buttonLogin } = dataForm;
-
-    const dataInputUsername = { ...inputUsername, username };
-    const dataInputPassword = { ...inputPassword, password };
-
-    const handleOnchangeUsername = (event) => {
-        dispatch(setUsername(event.target.value));
-    };
-    const handleOnchangePassword = (event) => {
-        dispatch(setPassword(event.target.value));
-    };
+    const [
+        dataInputUsername,
+        dataInputPassword,
+        handleOnchangeUsername,
+        handleOnchangePassword,
+        buttonLogin,
+    ] = useLogin(dataForm);
 
     return (
         <form className="p-3 mt-3">
