@@ -11,7 +11,7 @@ export const Footer = () => {
             >
                 <div className="container-fluid  d-flex justify-content-center">
                     <p className="text-white text-center col-12">
-                        Jorge Velasquez &copy; {new Date().getFullYear()}
+                        Politécnico Grancolombiano Modúlo PSP Grupo 20 &copy; {new Date().getFullYear()}
                     </p>
                     <p className="text-white text-center col-12">
                         Aplicacion web Control de Ventas para modulo Proceso de
