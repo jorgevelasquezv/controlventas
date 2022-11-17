@@ -23,7 +23,6 @@ export const useIngresarVentas = () => {
     };
     const handleOnChangeDate = (e) => {
         saleInput.date = e.target.value;
-        console.log(saleInput.date);
     };
 
     const handleOnClickSaveSale = (e) => {

@@ -6,8 +6,8 @@ export const Layout = ({ children }) => {
     return (
         <>
             <NavBar />
-            <main className="mt-4">{children}</main>
-            {/* <Footer /> */}
+                <main className="mt-4">{children}</main>
+            <Footer />
         </>
     );
 };
