@@ -10,12 +10,16 @@ export const salesSlices = createSlice({
             total: '',
             date: new Date().toISOString().replace(/.$/, ''),
         },
+        saleDay: [],
         sales: JSON.parse(localStorage.getItem('sales')) || [],
         validate: 0,
     },
     reducers: {
         setSale: (state, action) => {
             state.sale = action.payload;
+        },
+        setSaleDay: (state, action) => {
+            state.saleDay = action.payload;
         },
         setSales: (state, action) => {
             state.sales = action.payload;
@@ -26,7 +30,7 @@ export const salesSlices = createSlice({
     },
 });
 
-export const { setSale, setSales, setValidate } =
+export const { setSale, setSaleDay, setSales, setValidate } =
     salesSlices.actions;
 
 export default salesSlices.reducer;

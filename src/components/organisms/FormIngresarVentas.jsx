@@ -17,7 +17,7 @@ export const FormIngresarVentas = () => {
 
     return (
         <form
-            className={`container needs-validation ${
+            className={`mt-5 container needs-validation ${
                 validate === 1 && 'was-validated'
             }`}
             noValidate

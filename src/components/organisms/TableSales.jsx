@@ -1,19 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export const TableSales = () => {
-    const products = JSON.parse(localStorage.getItem('sales')) || [];
+    const { saleDay } = useSelector((state) => state.sales) || [];
 
-    const unidades = products.length > 0 && products
-        .map((product) => parseInt(product?.quantity))
-        .reduce((current, next) => current + next);
+    const unidades =
+        saleDay.length > 0 &&
+        saleDay
+            .map((product) => parseInt(product?.quantity))
+            .reduce((current, next) => current + next);
     const total =
-        products.length > 0 &&
-        products
+        saleDay.length > 0 &&
+        saleDay
             .map((product) => product?.total)
             .reduce((current, next) => current + next);
 
-    return (
-        <table className="table table-striped">
+    return saleDay.length > 0 ? (
+        <table className="table">
             <caption>Lista de ventas diarias</caption>
             <thead>
                 <tr>
@@ -26,16 +29,17 @@ export const TableSales = () => {
                 </tr>
             </thead>
             <tbody>
-                {products.length > 0 && products.map((product, key) => (
-                    <tr key={key}>
-                        <th scope="row">{key + 1}</th>
-                        <td>{product.product}</td>
-                        <td>{product.price}</td>
-                        <td>{product.quantity}</td>
-                        <td>{product.total}</td>
-                        <td>{product.date}</td>
-                    </tr>
-                ))}
+                {saleDay.length > 0 &&
+                    saleDay.map((product, key) => (
+                        <tr key={key}>
+                            <th scope="row">{key + 1}</th>
+                            <td>{product.product}</td>
+                            <td>{product.price}</td>
+                            <td>{product.quantity}</td>
+                            <td>{product.total}</td>
+                            <td>{product.date}</td>
+                        </tr>
+                    ))}
 
                 <tr>
                     <th scope="row">*</th>
@@ -47,5 +51,9 @@ export const TableSales = () => {
                 </tr>
             </tbody>
         </table>
+    ) : (
+        <article className="d-flex align-items-center justify-content-center min-vh-100 ">
+            <h1 className="align-self-center">No se encontaron datos</h1>
+        </article>
     );
 };

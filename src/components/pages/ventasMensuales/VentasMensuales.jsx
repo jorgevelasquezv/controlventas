@@ -11,7 +11,6 @@ import {
 import { Bar } from 'react-chartjs-2';
 import { useVentasMensuales } from '../../../hooks/useVentasMensuales';
 
-
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -26,7 +25,7 @@ export const VentasMensuales = () => {
 
     return (
         <Layout>
-            <section className="container fluid">
+            <section className="container-sm">
                 <label htmlFor="lang">
                     <b>Seleccione un mes</b>
                 </label>
@@ -43,8 +42,8 @@ export const VentasMensuales = () => {
                     ))}
                 </select>
             </section>
-            <section className="container fluid">
-                <Bar options={options} data={data} />
+            <section className="container">
+                <Bar options={options} data={data} className="mb-5" />
             </section>
         </Layout>
     );

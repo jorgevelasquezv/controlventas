@@ -4,7 +4,7 @@ import gitHub from '../../assets/images/github.png';
 
 export const Footer = () => {
     return (
-        <footer className="text-center position-absolute bottom-0 start-0 end-0">
+        <footer className="text-center mt-3">
             <nav
                 className="navbar navbar-dark"
                 style={{ backgroundColor: '#808B96' }}
