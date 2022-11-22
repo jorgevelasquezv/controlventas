@@ -34,6 +34,7 @@ export const VentasMensuales = () => {
                     className="form-select"
                     id="lang"
                     onChange={handleOnChange}
+                    defaultValue={new Date().getMonth()}
                 >
                     {months.map((month, key) => (
                         <option value={months.indexOf(month)} key={key}>
@@ -43,7 +44,11 @@ export const VentasMensuales = () => {
                 </select>
             </section>
             <section className="container-fluid row justify-content-center align-content-center">
-                <Bar options={options} data={data} className="w-75 h-75 text-center" />
+                <Bar
+                    options={options}
+                    data={data}
+                    className="w-75 h-75 text-center"
+                />
             </section>
         </Layout>
     );
