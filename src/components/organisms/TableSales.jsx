@@ -52,7 +52,7 @@ export const TableSales = () => {
             </tbody>
         </table>
     ) : (
-        <article className="d-flex align-items-center justify-content-center min-vh-100 ">
+        <article className="d-flex align-items-center justify-content-center ">
             <h1 className="align-self-center">No se encontaron datos</h1>
         </article>
     );
