@@ -1,19 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import { useTableSale } from '../../hooks/useTableSale';
 
 export const TableSales = () => {
-    const { saleDay } = useSelector((state) => state.sales) || [];
-
-    const unidades =
-        saleDay.length > 0 &&
-        saleDay
-            .map((product) => parseInt(product?.quantity))
-            .reduce((current, next) => current + next);
-    const total =
-        saleDay.length > 0 &&
-        saleDay
-            .map((product) => product?.total)
-            .reduce((current, next) => current + next);
+    const [saleDay, unidades, total] = useTableSale();
 
     return saleDay.length > 0 ? (
         <table className="table">
