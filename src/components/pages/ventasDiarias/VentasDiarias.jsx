@@ -20,8 +20,8 @@ export const VentasDiarias = () => {
     };
 
     return (
-        <Layout>
-            <section className="container min-vh-100">
+        <Layout position="position-absolute bottom-0 end-0 start-0">
+            <section className="container">
                 <form className="m-5">
                     <InputGroupFormSale
                         spanLeft="Fecha Venta"
