@@ -3,7 +3,7 @@ import { FormIngresarVentas } from '../../organisms/FormIngresarVentas';
 
 export const Ventas = () => {
     return (
-        <Layout>
+        <Layout position="position-absolute bottom-0 end-0 start-0">
             <FormIngresarVentas />
         </Layout>
     );

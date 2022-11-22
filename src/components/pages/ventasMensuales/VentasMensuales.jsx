@@ -42,8 +42,8 @@ export const VentasMensuales = () => {
                     ))}
                 </select>
             </section>
-            <section className="container">
-                <Bar options={options} data={data} className="mb-5" />
+            <section className="container-fluid row justify-content-center align-content-center">
+                <Bar options={options} data={data} className="w-75 h-75 text-center" />
             </section>
         </Layout>
     );

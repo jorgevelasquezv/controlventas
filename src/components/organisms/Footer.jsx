@@ -2,9 +2,9 @@ import React from 'react';
 
 import gitHub from '../../assets/images/github.png';
 
-export const Footer = () => {
+export const Footer = ({position}) => {
     return (
-        <footer className="text-center mt-3">
+        <footer className={`text-center mt-3 ${position}`}>
             <nav
                 className="navbar navbar-dark"
                 style={{ backgroundColor: '#808B96' }}
