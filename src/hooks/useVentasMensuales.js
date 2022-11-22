@@ -2,11 +2,9 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { months } from '../helpers/months';
 
-
-
 export const useVentasMensuales = () => {
     const { sales } = useSelector((state) => state.sales);
-    const [month, setMonth] = useState(1);
+    const [month, setMonth] = useState(new Date().getMonth() + 1);
     const labels = (month) => [
         ...new Set(
             sales
@@ -57,7 +55,7 @@ export const useVentasMensuales = () => {
                 }
             })
         );
-
+        
         const dataProducts = products.map(
             (product) => Object.values(product)[0]
         );
@@ -69,7 +67,7 @@ export const useVentasMensuales = () => {
         labels: labels(month),
         datasets: [
             {
-                label: 'Octubre',
+                label: months[month-1],
                 data: filtro(sales, month),
                 backgroundColor: 'rgba(59, 122, 206, 0.6)',
             },
