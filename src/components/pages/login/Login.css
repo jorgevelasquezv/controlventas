@@ -82,9 +82,20 @@
     color: #039BE5;
 }
 
+.valid{
+    /* background-image: linear-gradient(to right, pink, lightgreen); */
+    color: green;
+}
+
+.invalid{
+    /* border: 2px dashed red; */
+    color: red;
+}
+
 @media(max-width: 380px) {
     .wrapper {
         margin: 30px 20px;
         padding: 40px 15px 15px 15px;
     }
 }
+
