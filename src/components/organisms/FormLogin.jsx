@@ -9,6 +9,8 @@ export const FormLogin = ({ dataForm }) => {
         handleOnchangeUsername,
         handleOnchangePassword,
         buttonLogin,
+        validName,
+        validPassword,
     ] = useLogin(dataForm);
 
     return (
@@ -16,10 +18,12 @@ export const FormLogin = ({ dataForm }) => {
             <InputFieldLogin
                 data={dataInputUsername}
                 handleOnchange={handleOnchangeUsername}
+                valid={validName}
             />
             <InputFieldLogin
                 data={dataInputPassword}
                 handleOnchange={handleOnchangePassword}
+                valid={validPassword}
             />
             <ButtonLogin data={buttonLogin} />
         </form>

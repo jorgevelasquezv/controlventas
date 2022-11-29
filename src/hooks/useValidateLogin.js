@@ -5,8 +5,8 @@ import {
     setUsername,
 } from '../store/slice/users';
 
-const regexUsername = /[A-Za-z0-9]{8,20}/g;
-const regexPassword = /[A-Za-z0-9]{8,20}/g;
+const regexUsername = /^[A-Za-z]{4,20}\d{0,2}$/g;
+const regexPassword = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/g;
 
 export const useValidateLogin = () => {
     const dispatch = useDispatch();
