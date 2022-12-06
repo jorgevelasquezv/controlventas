@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setSaleDay } from "../store/slice/sales";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSaleDay } from '../store/slice/sales';
 
 export const useVentasDiarias = () => {
     const day = () => new Date().toISOString().replace(/.$/, '');
@@ -17,8 +17,11 @@ export const useVentasDiarias = () => {
     };
 
     useEffect(() => {
-        handleOnChangeDate({ target: { value: day() } });
-    });
+        const dateCompared = new Date(day()).toLocaleDateString();
+        dispatch(
+            setSaleDay(sales.filter((sale) => sale.date.includes(dateCompared)))
+        );
+    }, [dispatch, sales]);
 
-    return [handleOnChangeDate, day]
-}
+    return [handleOnChangeDate, day];
+};
