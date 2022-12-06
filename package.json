@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.2",
     "chart.js": "^3.9.1",
+    "eslint-plugin-react-hooks": "^5.0.0-next-f0534ae94-20221202",
     "jquery": "^3.6.1",
     "popper.js": "^1.16.1",
     "react": "^18.2.0",
@@ -32,7 +33,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": ["react-hooks"],
+      "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
   },
   "browserslist": {
     "production": [
