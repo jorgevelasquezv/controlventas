@@ -18,7 +18,7 @@ export const useVentasDiarias = () => {
 
     useEffect(() => {
         handleOnChangeDate({ target: { value: day() } });
-    }, []);
+    });
 
     return [handleOnChangeDate, day]
 }
